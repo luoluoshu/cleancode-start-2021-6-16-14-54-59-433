@@ -6,4 +6,12 @@ public class Address {
     public Address(String address) {
         this.address = address;
     }
+
+    public String getCity() {
+        return this.address.substring(this.address.indexOf("省") + 1, this.address.indexOf("市"));
+    }
+
+    public String getProvince() {
+        return this.address.substring(0, this.address.indexOf("省"));
+    }
 }
