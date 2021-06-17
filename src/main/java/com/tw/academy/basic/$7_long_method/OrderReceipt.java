@@ -38,10 +38,11 @@ public class OrderReceipt {
             // calculate total amount of lineItem = price * quantity + 10 % sales tax
             totalLineItemAmount += lineItem.getTotalLineItemAmount();
         }
+        receiptAppendContent(orderReceiptContent, SALES_TAX_STRING,TAB_CHAR);
+        orderReceiptContent.append(totSalesTax);
 
-        orderReceiptContent.append(SALES_TAX_STRING).append(TAB_CHAR).append(totSalesTax);
-
-        orderReceiptContent.append(TOTAL_AMOUNT_STRING).append(TAB_CHAR).append(totalLineItemAmount);
+        receiptAppendContent(orderReceiptContent, TOTAL_AMOUNT_STRING,TAB_CHAR);
+        orderReceiptContent.append(totalLineItemAmount);
         return orderReceiptContent.toString();
     }
 

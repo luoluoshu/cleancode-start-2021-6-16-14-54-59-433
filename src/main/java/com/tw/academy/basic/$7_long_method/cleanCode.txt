@@ -6,3 +6,4 @@
 6. line 55: [extract] extract getReceiptHeader method
 7. line 33: [extract] extract receiptAddLineItemContent method
 8. line 36: [feature envy] move getSalesTax and getTotalLineItemAmount methods to class LineItem
+9. line 41: [refactor] use receiptAppendContent method
