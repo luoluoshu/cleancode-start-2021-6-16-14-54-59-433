@@ -14,4 +14,12 @@ public class Address {
     public String getProvince() {
         return this.address.substring(0, this.address.indexOf("省"));
     }
+
+    public boolean isSameProvince(Address compareAddress) {
+        return this.getProvince().equals(compareAddress.getProvince());
+    }
+
+    public boolean isSameCity(Address compareAddress) {
+        return this.getCity().equals(compareAddress.getCity());
+    }
 }
