@@ -2,4 +2,4 @@
 2. line 18: [dead code] remove Deprecated method printCustomerName
 3. line 21: [dead code] Remove redundant comments
 4. line 11: [magic number] extract magic number as constant
-5. line 55: [naming] rename o --> order
+5. line 55: [naming] rename bad names
