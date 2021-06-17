@@ -1,1 +1,2 @@
 1. line 11: [naming] rename o --> order
+2. line 18: [dead code] remove Deprecated method printCustomerName
