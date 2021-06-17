@@ -39,10 +39,10 @@ public class OrderReceipt {
             totalLineItemAmount += lineItem.getTotalLineItemAmount();
         }
         receiptAppendContent(orderReceiptContent, SALES_TAX_STRING,TAB_CHAR);
-        orderReceiptContent.append(totSalesTax);
+        receiptAppendContent(orderReceiptContent, totSalesTax);
 
         receiptAppendContent(orderReceiptContent, TOTAL_AMOUNT_STRING,TAB_CHAR);
-        orderReceiptContent.append(totalLineItemAmount);
+        receiptAppendContent(orderReceiptContent, totalLineItemAmount);
         return orderReceiptContent.toString();
     }
 
@@ -53,6 +53,9 @@ public class OrderReceipt {
         receiptAppendContent(orderReceiptContent, lineItem.totalAmount(),LINE_BREAK_CHAR);
     }
 
+    public void receiptAppendContent(StringBuilder orderReceiptContent, double content) {
+        orderReceiptContent.append(content);
+    }
     public void receiptAppendContent(StringBuilder orderReceiptContent, String content, char endSymbol) {
         orderReceiptContent.append(content);
         orderReceiptContent.append(endSymbol);
