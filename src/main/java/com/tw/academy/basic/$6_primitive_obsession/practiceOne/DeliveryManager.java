@@ -4,9 +4,15 @@ public class DeliveryManager {
     String toAddress;
     String fromAddress;
 
+    private Address from;
+    private Address to;
+
     public DeliveryManager(String fromAddress, String toAddress) {
         this.toAddress = toAddress;
         this.fromAddress = fromAddress;
+
+        this.from = new Address(fromAddress);
+        this.to = new Address(toAddress);
     }
 
     public DeliverCenter allocate(){
