@@ -29,10 +29,13 @@ public class LineItem {
     double totalAmount() {
         return price * quantity;
     }
+
+	// calculate sales tax @ rate of 10%
     double getSalesTax() {
         return this.totalAmount() * TAX_RATE;
     }
 
+	// calculate total amount of lineItem = price * quantity + 10 % sales tax
 	double getTotalLineItemAmount() {
 		return this.totalAmount() + this.getSalesTax();
 	}

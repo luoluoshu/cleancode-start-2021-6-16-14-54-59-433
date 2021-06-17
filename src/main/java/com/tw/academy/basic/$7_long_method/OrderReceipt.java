@@ -13,8 +13,7 @@ public class OrderReceipt {
     private static final String TOTAL_AMOUNT_STRING = "Total Amount";
     private static final char TAB_CHAR = '\t';
     private static final char LINE_BREAK_CHAR = '\n';
-    private Order order;
-    private double salesTax;
+    private final Order order;
 
     public OrderReceipt(Order order) {
         this.order = order;
@@ -32,10 +31,8 @@ public class OrderReceipt {
         for (LineItem lineItem : order.getLineItems()) {
             receiptAddLineItemContent(orderReceiptContent, lineItem);
 
-            // calculate sales tax @ rate of 10%
             totSalesTax += lineItem.getSalesTax();
 
-            // calculate total amount of lineItem = price * quantity + 10 % sales tax
             totalLineItemAmount += lineItem.getTotalLineItemAmount();
         }
         receiptAppendContent(orderReceiptContent, SALES_TAX_STRING,TAB_CHAR);
