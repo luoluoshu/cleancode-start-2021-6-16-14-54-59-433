@@ -2,15 +2,19 @@ package com.tw.academy.basic.$4_naming.practiceOne;
 
 public class MorseCodeDecoder {
     public static String decode(String input) {
-        String[] tempValue = input.split("\\s{2,}");
-        StringBuilder res = new StringBuilder();
-        for (String s : tempValue) {
-            String [] charArray = s.split(" ");
-            for (String c: charArray) {
-                res.append(MorseCode.get(c));
+        String morseCodeRegex = "\\s{2,}";
+        String[] splits = input.split(morseCodeRegex);
+        StringBuilder decodedMorseCode = new StringBuilder();
+        String splitRegex = " ";
+        for (String split : splits) {
+            String [] splitDecodedMorseCodes = split.split(splitRegex);
+            for (String splitDecodedMorseCode: splitDecodedMorseCodes) {
+                decodedMorseCode.append(MorseCode.get(splitDecodedMorseCode));
             }
-            res.append(" ");
+            decodedMorseCode.append(splitRegex);
         }
-        return res.toString().replaceAll("null", "").trim();
+        String nullRegx = "null";
+        String regxReplacementString = "";
+        return decodedMorseCode.toString().replaceAll(nullRegx, regxReplacementString).trim();
     }
 }

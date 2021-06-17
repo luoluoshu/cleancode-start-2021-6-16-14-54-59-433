@@ -13,12 +13,6 @@ public class Passenger {
         this.name = name;
     }
 
-//    public Passenger(String seatNumber, String name, String phone) {
-//        this.seatNumber = seatNumber;
-//        this.name = name;
-//        this.phone = phone;
-//    }
-
     public Passenger(String seatNumber, String name, String phone, String identityNumber) {
         this.seatNumber = seatNumber;
         this.name = name;

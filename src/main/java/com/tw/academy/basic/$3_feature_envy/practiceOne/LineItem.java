@@ -23,4 +23,8 @@ public class LineItem {
 	public int getQuantity() {
 		return quantity;
 	}
+
+	public double calculateSubTotal() {
+		return this.getPrice() * this.getQuantity();
+	}
 }

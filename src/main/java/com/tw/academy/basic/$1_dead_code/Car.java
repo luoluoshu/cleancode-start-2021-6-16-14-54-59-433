@@ -5,7 +5,7 @@ import java.util.List;
 
 //Has been used in somewhere
 public class Car {
-    private List<Passenger> passengers = new ArrayList<>();
+    private final List<Passenger> passengers = new ArrayList<>();
     private static Integer seatNumber = 1;
 
     //Has been used in somewhere

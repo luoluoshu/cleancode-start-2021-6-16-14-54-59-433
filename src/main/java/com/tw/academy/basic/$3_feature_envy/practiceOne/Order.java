@@ -20,6 +20,6 @@ public class Order {
     }
 
     private double calculateSubTotal(LineItem lineItem) {
-        return lineItem.getPrice() * lineItem.getQuantity();
+        return lineItem.calculateSubTotal();
     }
 }
