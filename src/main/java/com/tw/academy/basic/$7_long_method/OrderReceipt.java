@@ -30,14 +30,7 @@ public class OrderReceipt {
         double totSalesTax = 0d;
         double totalAmount = 0d;
         for (LineItem lineItem : order.getLineItems()) {
-            orderReceiptContent.append(lineItem.getDescription());
-            orderReceiptContent.append(TAB_CHAR);
-            orderReceiptContent.append(lineItem.getPrice());
-            orderReceiptContent.append(TAB_CHAR);
-            orderReceiptContent.append(lineItem.getQuantity());
-            orderReceiptContent.append(TAB_CHAR);
-            orderReceiptContent.append(lineItem.totalAmount());
-            orderReceiptContent.append(LINE_BREAK_CHAR);
+            receiptAddLineItemContent(orderReceiptContent, lineItem);
 
             // calculate sales tax @ rate of 10%
             double salesTax = lineItem.totalAmount() * TAX_RATE;
@@ -53,9 +46,30 @@ public class OrderReceipt {
         return orderReceiptContent.toString();
     }
 
-    private void getReceiptHeader(StringBuilder orderReceiptContent) {
-        orderReceiptContent.append(PRINTING_ORDERS_HEARD);
+    public void receiptAddLineItemContent(StringBuilder orderReceiptContent, LineItem lineItem) {
+        receiptAppendContent(orderReceiptContent, lineItem.getDescription(),TAB_CHAR);
+        receiptAppendContent(orderReceiptContent, lineItem.getPrice(),TAB_CHAR);
+        receiptAppendContent(orderReceiptContent, lineItem.getQuantity(),TAB_CHAR);
+        receiptAppendContent(orderReceiptContent, lineItem.totalAmount(),LINE_BREAK_CHAR);
+    }
 
+    public void receiptAppendContent(StringBuilder orderReceiptContent, String content, char endSymbol) {
+        orderReceiptContent.append(content);
+        orderReceiptContent.append(endSymbol);
+    }
+
+    public void receiptAppendContent(StringBuilder orderReceiptContent, int content, char endSymbol) {
+        orderReceiptContent.append(content);
+        orderReceiptContent.append(endSymbol);
+    }
+
+    public void receiptAppendContent(StringBuilder orderReceiptContent, double content, char endSymbol) {
+        orderReceiptContent.append(content);
+        orderReceiptContent.append(endSymbol);
+    }
+
+    public void getReceiptHeader(StringBuilder orderReceiptContent) {
+        orderReceiptContent.append(PRINTING_ORDERS_HEARD);
         orderReceiptContent.append(order.getCustomerName());
         orderReceiptContent.append(order.getCustomerAddress());
     }

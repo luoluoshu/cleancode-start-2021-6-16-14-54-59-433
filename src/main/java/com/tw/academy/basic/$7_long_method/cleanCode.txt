@@ -4,3 +4,4 @@
 4. line 11: [magic number] extract magic number as constant
 5. line 55: [naming] rename bad names
 6. line 55: [extract] extract getReceiptHeader method
+7. line 33: [extract] extract receiptAddLineItemContent method
